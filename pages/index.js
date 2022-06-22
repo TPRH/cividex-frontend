@@ -1,15 +1,16 @@
 import Head from 'next/head'
 import Header from '../components/header'
 import LoginForm from '../components/LoginForm'
-import Form from '../components/Form'
-import Footer from '../components/footer'
+import InputForm from '../components/InputForm'
+import FactsTable from '../components/FactsTable'
+import Footer from '../components/Footer'
 import { useAuth } from '../contexts/auth'
 import useResource from '../hooks/useResource'
 
 
 export default function Home() {
   const { user, login, logout } = useAuth();
-  const { resources } = useResource();
+  const { resources, createResource } = useResource();
 
   return (
     <div>
@@ -21,9 +22,8 @@ export default function Home() {
       <main>
         <h1>Hello World from CiviDex</h1>
         <LoginForm onLogin={login} />
-        {user && user.username}
-        {resources && resources.map(e => <p key={e.id}>{e.fact}</p>)}
-        <Form />
+        <InputForm createFact={createResource} />
+        <FactsTable facts={resources || []} />
       </main>
       <Footer />
     </div>
