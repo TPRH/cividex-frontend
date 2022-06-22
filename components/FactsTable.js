@@ -17,7 +17,7 @@ export default function FactsTable({ facts }) {
             <td>{fact.fact}</td>
             <td>{fact.date}</td>
             <td>{fact.flags}</td>
-            <td>{fact.contributor}</td>
+            <td><a href={fact.source}>{fact.source}</a></td>
           </tr>
         ))}
       </tbody>

@@ -1,5 +1,5 @@
 
-export default function InputForm({ createFact }) {
+export default function InputForm({ user, createFact }) {
 
   function handleSubmit(e) {
     e.preventDefault()
@@ -8,8 +8,8 @@ export default function InputForm({ createFact }) {
       date: e.target.date.value,
       flags: e.target.flag.value,
       progress: false,
-      contributor: 7
-      // source: e.target.source.value,
+      contributor: user.id,
+      source: e.target.source.value,
     }
     createFact(info)
   }

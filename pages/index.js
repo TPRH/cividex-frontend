@@ -22,7 +22,7 @@ export default function Home() {
       <main>
         <h1>Hello World from CiviDex</h1>
         <LoginForm onLogin={login} />
-        <InputForm createFact={createResource} />
+        <InputForm createFact={createResource} user={user} />
         <FactsTable facts={resources || []} />
       </main>
       <Footer />
