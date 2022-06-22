@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Header from '../components/header'
 import LoginForm from '../components/LoginForm'
-import Form from '../components/form'
+import Form from '../components/Form'
 import Footer from '../components/footer'
 import { useAuth } from '../contexts/auth'
 import useResource from '../hooks/useResource'
