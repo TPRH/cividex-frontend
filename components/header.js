@@ -9,10 +9,10 @@ export default function Header({user, onLogout}) {
         </nav>
         {user ?
             <div>
-                <Link href={'/user'}><a>{user}</a></Link>
-                <Link href={'/'}><a onClick={onLogout}>Sign Out</a></Link>
+                <Link href='/user'><a>Logged in: {user.username} &nbsp;</a></Link>
+                <Link href='/'><button onClick={onLogout}>Sign Out</button></Link>
             </div>
-            : <div><button>Log in</button></div>
+            : <Link href='/admin'><div><button>Log in</button></div></Link>
         }
     </header>
   )

@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+
 const apiUrl = process.env.NEXT_PUBLIC_RESOURCE_URL;
 const baseUrl = process.env.NEXT_PUBLIC_API_URL;
 const tokenUrl = baseUrl + '/api/token/';
