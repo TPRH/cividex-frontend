@@ -6,6 +6,7 @@ import FactsTable from '../components/FactsTable'
 import Footer from '../components/Footer'
 import { useAuth } from '../contexts/auth'
 import useResource from '../hooks/useResource'
+import FactsCards from '../components/FactsCards'
 
 
 export default function Home() {
@@ -20,9 +21,10 @@ export default function Home() {
       </Head>
       <Header />
       <main>
-        <h1>Hello World from CiviDex</h1>
+        <h1>Welcome to CiviDex</h1>
         <LoginForm onLogin={login} ></LoginForm>
         <InputForm createFact={createResource} user={user} />
+        <FactsCards facts={resources || []} />
         <FactsTable facts={resources || []} />
       </main>
       <Footer />

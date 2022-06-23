@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -13,12 +17,38 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+form {
+  background-color: green;
+  border-radius: 0.5em;
+  max-width: 360px;
+  margin: 5vh auto;
+  padding: 2vh;
+}
+
+input, select {
+  display: block;
+  margin: 0.75em auto;
+  padding: 0.25em;
+  border-radius: 0.25em;
+  text-align: center;
+  color: darkgreen;
+  font-size: larger;
+  width: 320px;
+  border: none;
+}
+
+button {
+  background-color: aliceblue;
+  border-radius: 0.5em;
+  color: darkgreen;
+  font-weight: bold;
+  padding: 0.25em 2em;
+  margin: 0.25em 0;
+  border: none;
 }
 
 table {
-  margin: 0 auto;
+  margin: 2vh auto;
   padding: 1em 0;
   text-align: left;
   border: 1px solid gold;
@@ -28,4 +58,52 @@ td, th {
   padding: 0.25em 1em;
   max-width: 250px;
   overflow: hidden;
+}
+
+section {
+  background-color: green;
+  padding: 5vh 0;
+  margin: 5vh auto;
+}
+
+article {
+  background-color: azure;
+  display: inline-block;
+  border-radius: 1em;
+  box-shadow: 0.25em 0.25em 0.2em darkgreen;
+  color: darkgreen;
+  width: 340px;
+  text-align: left;
+  padding: 0.75em;
+  margin: 0.75em 0.5em;
+}
+
+h3 {
+  margin: 0.1em 0 0.25em;
+}
+
+h2 {
+  margin: 0;
+}
+
+span {
+  float: right;
+  color: azure;
+  background-color: darkgreen;
+  border-radius: 0.25em;
+  padding: 0.25em;
+}
+
+article > p {
+  margin: 0;
+}
+
+header {
+  background-color: midnightblue;
+  padding: 0.5em 0;
+}
+
+footer {
+  background-color: midnightblue;
+  padding: 3vh 0 7vh;
 }

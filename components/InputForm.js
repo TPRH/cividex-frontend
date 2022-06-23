@@ -16,18 +16,16 @@ export default function InputForm({ user, createFact }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <fieldset>
-        <legend>Fact Entry</legend>
-        <input placeholder="fact" name="fact" />
-        <input type="date" name="date" />
-        <select name='flag'>
-          <option value='c'>Civil Rights</option>
-          <option value='v'>Voting</option>
-          <option value='s'>Slavery</option>
-        </select>
-        <input placeholder="source" name="source" />
-        <button>Create</button>
-      </fieldset>
+      <legend>Fact Entry Form</legend>
+      <input placeholder="fact" name="fact" />
+      <input type="date" name="date" />
+      <select name='flag' >
+        <option value='c'>Civil Rights</option>
+        <option value='v'>Voting</option>
+        <option value='s'>Slavery</option>
+      </select>
+      <input placeholder="source" name="source" />
+      <button>Create</button>
     </form>
   )
 }

@@ -16,7 +16,7 @@ export default function Layout({children}) {
                 <title>Admin</title>
             </Head>
             <Header username = {user?.user} onLogout={logout} />
-            <main>{children}</main>
+                <main>{children}</main>
             <Footer reports={resources || []} />
         </div>
     )

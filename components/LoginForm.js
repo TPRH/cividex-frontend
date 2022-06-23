@@ -7,12 +7,10 @@ export default function LoginForm({ onLogin }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <fieldset>
-        <legend>Log In</legend>
-        <input name="username" placeholder="username" />
-        <input type='password' name="password" placeholder="password" />
-        <button type='submit'>Login</button>
-      </fieldset>
+      <legend>Log In Form</legend>
+      <input name="username" placeholder="username" />
+      <input type='password' name="password" placeholder="password" />
+      <button type='submit'>Login</button>
     </form>
   )
 }
