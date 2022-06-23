@@ -32,7 +32,7 @@ export default function useResource() {
         try {
             const url = apiUrl + id;
             await axios.delete(url, config());
-            await mutate(); // mutate causes complete collection to be refetched
+            await mutate();
         } catch (err) {
             handleError(err);
         }
@@ -42,11 +42,10 @@ export default function useResource() {
         try {
             const url = apiUrl + id;
             await axios.put(url, config());
-            await mutate(); // mutate causes complete collection to be refetched
+            await mutate();
         } catch (err) {
             handleError(err);
         }
-    }
     }
 
     // helper function to handle getting Authorization headers EXACTLY right
@@ -60,8 +59,6 @@ export default function useResource() {
 
     function handleError(err) {
         console.error(err);
-        // currently just log out on error
-        // but a common error will be short lived token expiring
         // STRETCH: refresh the access token when it has expired
         logout();
     }
