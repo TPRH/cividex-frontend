@@ -2,6 +2,7 @@ import Link from "next/link";
 import Footer from "../components/Footer";
 import Header from "../components/header";
 import LoginForm from '../components/LoginForm'
+import FactsTable from '../components/FactsTable'
 import { useAuth } from "../contexts/auth";
 import useResource from "../hooks/useResource";
 
