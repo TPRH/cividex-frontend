@@ -21,7 +21,7 @@ export default function Home() {
       <Header />
       <main>
         <h1>Hello World from CiviDex</h1>
-        <LoginForm onLogin={login} />
+        <LoginForm onLogin={login} ></LoginForm>
         <InputForm createFact={createResource} user={user} />
         <FactsTable facts={resources || []} />
       </main>
