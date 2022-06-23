@@ -7,12 +7,10 @@ export const apiUrl = process.env.NEXT_PUBLIC_RESOURCE_URL;
 export default function useResource() {
     const { tokens, logout } = useAuth();
     const { data, error, mutate } = useSWR([apiUrl, tokens], fetchResource);
+
     async function fetchResource(url) {
-        if (!tokens) {
-            return;
-        }
         try {
-            const response = await axios.get(apiUrl, config());
+            const response = await axios.get(apiUrl);
             return response.data;
         } catch (err) {
             handleError(err);

@@ -1,5 +1,6 @@
 
-export default function FactsTable({ facts }) {
+
+export default function FactsTable({ facts, onDelete, update }) {
   return (
     <table>
       <thead>
@@ -17,7 +18,7 @@ export default function FactsTable({ facts }) {
             <td>{fact.date}</td>
             <td>{fact.flags}</td>
             <td><a href={fact.source}>{fact.source}</a></td>
-            <button>Delete</button>
+            <td><button onClick={() => onDelete(fact.id)}>Delete</button><button onClick={update}>Update</button></td>
           </tr>
         ))}
       </tbody>

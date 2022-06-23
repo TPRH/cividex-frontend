@@ -10,13 +10,13 @@ import useResource from "../hooks/useResource";
 export default function Admin() {
 
   const { login } = useAuth()
-  const { resources } = useResource()
+  const { resources, deleteResource, updateResource } = useResource()
 
   return (
     <>
       <Header />
       <LoginForm onLogin={login} ></LoginForm>
-      <FactsTable facts={resources || []} />
+      <FactsTable facts={resources || []} onDelete={deleteResource} update={updateResource}/>
       <Footer />
     </>
   )
