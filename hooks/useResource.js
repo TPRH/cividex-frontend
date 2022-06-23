@@ -38,10 +38,10 @@ export default function useResource() {
         }
     }
 
-    async function updateResource(resource) {
+    async function updateResource(info) {
         try {
             const url = apiUrl + id;
-            await axios.put(url, config());
+            await axios.put(url, info, config());
             await mutate();
         } catch (err) {
             handleError(err);
