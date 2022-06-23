@@ -1,5 +1,4 @@
 
-
 export default function FactsTable({ facts }) {
   return (
     <table>
@@ -18,6 +17,7 @@ export default function FactsTable({ facts }) {
             <td>{fact.date}</td>
             <td>{fact.flags}</td>
             <td><a href={fact.source}>{fact.source}</a></td>
+            <button>Delete</button>
           </tr>
         ))}
       </tbody>
