@@ -98,8 +98,25 @@ article > p {
   margin: 0;
 }
 
+nav {
+  display: inline-block;
+  min-height: 1.75em;
+}
+
+nav a {
+  padding: 0 0.5em;
+  color: azure;
+  font-size: small;
+}
+
+header > div {
+  float: right;
+  margin: 0 1em;
+}
+
 header {
   background-color: midnightblue;
+  text-align: left;
   padding: 0.5em 0;
 }
 

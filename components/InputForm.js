@@ -1,6 +1,4 @@
 import axios from 'axios';
-import { useState } from 'react';
-
 
 const apiUrl = process.env.NEXT_PUBLIC_RESOURCE_URL;
 const baseUrl = process.env.NEXT_PUBLIC_API_URL;
@@ -9,26 +7,19 @@ const username = process.env.NEXT_PUBLIC_USERNAME;
 const password = process.env.NEXT_PUBLIC_PASSWORD;
 
 
-
-
 export default function InputForm({ user }) {
-
-
-  const form = document.getElementById('form');
 
   async function createResource(info) {
     try {
       const response = await axios.post(tokenUrl, { username, password });        
       let tokens = response.data
       
-      console.log(tokens.access)
       let authHeader = {
         headers: {
             'Authorization': 'Bearer ' + tokens.access
         }
     };
-      console.log(authHeader)
-        await axios.post(apiUrl, info, authHeader);
+      await axios.post(apiUrl, info, authHeader);
     } catch (err) {
         console.log(err);
     }
@@ -53,11 +44,11 @@ export default function InputForm({ user }) {
       source: e.target.source.value,
     }
     createResource(info)
-    form.reset()
+    e.target.reset()
   }
 
   return (
-    <form id="form" onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <legend>Fact Entry Form</legend>
       <input placeholder="fact" name="fact" />
       <input type="date" name="date" />
