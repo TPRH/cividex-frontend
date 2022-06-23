@@ -41,13 +41,13 @@ export default function useResource() {
     async function updateResource(resource) {
         try {
             const url = apiUrl + id;
-            await axios.put(url, config());
+            await axios.put(url, resource, config());
             await mutate(); // mutate causes complete collection to be refetched
         } catch (err) {
             handleError(err);
         }
     }
-    }
+    
 
     // helper function to handle getting Authorization headers EXACTLY right
     function config() {
