@@ -8,8 +8,8 @@ export default function LoginForm({ onLogin }) {
   return (
     <form onSubmit={handleSubmit}>
       <legend>Log In Form</legend>
-      <input name="username" placeholder="username" />
-      <input type='password' name="password" placeholder="password" />
+      <input id='username' name="username" placeholder="username" />
+      <input id='password' type='password' name="password" placeholder="password" />
       <button type='submit'>Login</button>
     </form>
   )
