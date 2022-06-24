@@ -19,8 +19,10 @@ export default function Home() {
       </Head>
       <Header login={login} />
       <main>
+        <br></br>
         <h1>Welcome to CiviDex</h1>
         <InputForm createFact={createResource} user={user} />
+        <br></br>
         <FactsCards facts={resources || []} />
       </main>
       <Footer />
