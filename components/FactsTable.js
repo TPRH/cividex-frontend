@@ -6,15 +6,33 @@ export default function FactsTable({ facts, onDelete, update }) {
   const [display , setDisplay] = useState(false)
   const [fact , setFact] = useState({})
 
-  function handleUpdate(fact) {
+  function handleReview(fact) {
     setFact(fact)
     setDisplay(true)
     }
 
+  function handleUpdate(e) {
+    e.preventDefault()
+    let info = {
+      fact: e.target.fact.value,
+      date: e.target.date.value,
+      flags: e.target.flag.value,
+      source: e.target.source.value,
+      verified: e.target.verified.checked,
+      progress: e.target.progress.checked,
+      contributor: e.target.contributor.value
+    }
+    let id = e.target.id.value
+    update(id, info)
+    setDisplay(false)
+  }
+
+
   function UpdateForm(fact) {
     fact = fact.fact
     return (
-      <form>
+      <form onSubmit={handleUpdate}>
+        <input name="id" value={fact.id} type='hidden' />
         <legend>Fact Update Form</legend>
         <input placeholder="fact" name="fact" defaultValue={fact.fact} />
         <input type="date" name="date" defaultValue={fact.date} />
@@ -28,6 +46,7 @@ export default function FactsTable({ facts, onDelete, update }) {
         <input type='checkbox' name="verified" defaultValue={fact.verified} />
         <label >progress</label>
         <input type='checkbox' name="progress" defaultValue={fact.progress}/>
+        <input name="contributor" type='hidden' value={fact.contributor} />
         <button>Update</button>
       </form>
     )
@@ -54,7 +73,7 @@ export default function FactsTable({ facts, onDelete, update }) {
               <td>{fact.flags}</td>
               <td><a href={fact.source}>{fact.source}</a></td>
               <td>{fact.verified ? 'T' : 'F'}</td>
-              <td><button onClick={()=>onDelete(fact.id)}>Delete</button><button onClick={()=>handleUpdate(fact)}>Review</button></td>
+              <td><button onClick={()=>onDelete(fact.id)}>Delete</button><button onClick={()=>handleReview(fact)}>Review</button></td>
             </tr>
           ))}
         </tbody>

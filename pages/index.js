@@ -15,7 +15,7 @@ export default function Home() {
     <div>
       <Head>
         <title>CiviDex App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/cvdxlogo.png" />
       </Head>
       <Header login={login} />
       <main>
