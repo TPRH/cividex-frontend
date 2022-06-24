@@ -6,15 +6,34 @@ export default function FactsTable({ facts, onDelete, update }) {
   const [display , setDisplay] = useState(false)
   const [fact , setFact] = useState({})
 
-  function handleUpdate(fact) {
+  function handleReview(fact) {
     setFact(fact)
     setDisplay(true)
     }
 
+  function handleUpdate(e) {
+    e.preventDefault()
+    let info = {
+      fact: e.target.fact.value,
+      date: e.target.date.value,
+      flags: e.target.flag.value,
+      source: e.target.source.value,
+      verified: e.target.verified.value,
+      progress: e.target.progress.value,
+
+    }
+    let id = e.target.id.value
+    update(id, info)
+    setDisplay(false)
+  }
+
+
   function UpdateForm(fact) {
     fact = fact.fact
     return (
-      <form>
+      <form onSubmit={handleUpdate}>
+        <label>Fact id</label>
+        <input name="id" value={fact.id} readOnly='readonly'/>
         <legend>Fact Update Form</legend>
         <input placeholder="fact" name="fact" defaultValue={fact.fact} />
         <input type="date" name="date" defaultValue={fact.date} />
@@ -54,7 +73,7 @@ export default function FactsTable({ facts, onDelete, update }) {
               <td>{fact.flags}</td>
               <td><a href={fact.source}>{fact.source}</a></td>
               <td>{fact.verified ? 'T' : 'F'}</td>
-              <td><button onClick={()=>onDelete(fact.id)}>Delete</button><button onClick={()=>handleUpdate(fact)}>Review</button></td>
+              <td><button onClick={()=>onDelete(fact.id)}>Delete</button><button onClick={()=>handleReview(fact)}>Review</button></td>
             </tr>
           ))}
         </tbody>
