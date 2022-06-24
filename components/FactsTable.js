@@ -54,7 +54,7 @@ export default function FactsTable({ facts, onDelete, update }) {
               <td>{fact.flags}</td>
               <td><a href={fact.source}>{fact.source}</a></td>
               <td>{fact.verified ? 'T' : 'F'}</td>
-              <td><button onClick={()=>onDelete(fact.id)}>Delete</button><button onClick={()=>handleUpdate(fact)}>Update</button></td>
+              <td><button onClick={()=>onDelete(fact.id)}>Delete</button><button onClick={()=>handleUpdate(fact)}>Review</button></td>
             </tr>
           ))}
         </tbody>
