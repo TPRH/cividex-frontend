@@ -18,9 +18,9 @@ export default function FactsTable({ facts, onDelete, update }) {
       date: e.target.date.value,
       flags: e.target.flag.value,
       source: e.target.source.value,
-      verified: e.target.verified.value,
-      progress: e.target.progress.value,
-
+      verified: e.target.verified.checked,
+      progress: e.target.progress.checked,
+      contributor: e.target.contributor.value
     }
     let id = e.target.id.value
     update(id, info)
@@ -32,8 +32,7 @@ export default function FactsTable({ facts, onDelete, update }) {
     fact = fact.fact
     return (
       <form onSubmit={handleUpdate}>
-        <label>Fact id</label>
-        <input name="id" value={fact.id} readOnly='readonly'/>
+        <input name="id" value={fact.id} type='hidden' />
         <legend>Fact Update Form</legend>
         <input placeholder="fact" name="fact" defaultValue={fact.fact} />
         <input type="date" name="date" defaultValue={fact.date} />
@@ -47,6 +46,7 @@ export default function FactsTable({ facts, onDelete, update }) {
         <input type='checkbox' name="verified" defaultValue={fact.verified} />
         <label >progress</label>
         <input type='checkbox' name="progress" defaultValue={fact.progress}/>
+        <input name="contributor" type='hidden' value={fact.contributor} />
         <button>Update</button>
       </form>
     )

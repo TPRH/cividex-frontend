@@ -38,7 +38,7 @@ export default function useResource() {
 
     async function updateResource(id, info) {
         try {
-            const url = apiUrl + id;
+            const url = apiUrl + id + '/';
             await axios.put(url, info, config());
             await mutate();
         } catch (err) {
